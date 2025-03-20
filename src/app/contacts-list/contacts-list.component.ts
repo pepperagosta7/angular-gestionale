@@ -1,14 +1,16 @@
 import { Component } from '@angular/core';
 import { GestioneDatiServiceService } from '../gestione-dati-service.service';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-contacts-list',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule,FormsModule],
   templateUrl: './contacts-list.component.html',
-  styleUrl: './contacts-list.component.css'
+  styleUrl: './contacts-list.component.css',
 })
-export class PersonaComponent {
-  
+export class ContactsListComponent {
   // Variabili per il form
   nome: string = '';
   cognome: string = '';
@@ -25,7 +27,7 @@ export class PersonaComponent {
       const nuovaPersona: Persona = {
         nome: this.nome,
         cognome: this.cognome,
-        numeroDiTelefono: this.numeroDiTelefono
+        numeroDiTelefono: this.numeroDiTelefono,
       };
 
       this.personaService.aggiungiPersona(nuovaPersona);

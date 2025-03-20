@@ -1,1 +1,97 @@
-<p>contacts-list works!</p>
+<!-- Form per aggiungere una persona -->
+<form (ngSubmit)="aggiungiPersona()">
+    <input
+      type="text"
+      [(ngModel)]="nome"
+      name="nome"
+      placeholder="Nome"
+      required
+    />
+    <input
+      type="text"
+      [(ngModel)]="cognome"
+      name="cognome"
+      placeholder="Cognome"
+      required
+    />
+    <input
+      type="text"
+      [(ngModel)]="numeroDiTelefono"
+      name="numeroDiTelefono"
+      placeholder="Numero di Telefono"
+      required
+    />
+    <button type="submit">Aggiungi Persona</button>
+  </form>
+  
+  <h2>Lista Persone</h2>
+  
+  <!-- Tabella per visualizzare le persone -->
+  <table>
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Cognome</th>
+        <th>Numero di Telefono</th>
+        <th>Azioni</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let persona of persone; let i = index">
+        <td>{{ persona.nome }}</td>
+        <td>{{ persona.cognome }}</td>
+        <td>{{ persona.numeroDiTelefono }}</td>
+        <td>
+          <button (click)="rimuoviPersona(i)">Rimuovi</button>
+        </td>
+      </tr>
+    </tbody>
+  </table><!-- Form per aggiungere una persona -->
+  <form (ngSubmit)="aggiungiPersona()">
+    <input
+      type="text"
+      [(ngModel)]="nome"
+      name="nome"
+      placeholder="Nome"
+      required
+    />
+    <input
+      type="text"
+      [(ngModel)]="cognome"
+      name="cognome"
+      placeholder="Cognome"
+      required
+    />
+    <input
+      type="text"
+      [(ngModel)]="numeroDiTelefono"
+      name="numeroDiTelefono"
+      placeholder="Numero di Telefono"
+      required
+    />
+    <button type="submit">Aggiungi Persona</button>
+  </form>
+  
+  <h2>Lista Persone</h2>
+  
+  <!-- Tabella per visualizzare le persone -->
+  <table>
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Cognome</th>
+        <th>Numero di Telefono</th>
+        <th>Azioni</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let persona of persone; let i = index">
+        <td>{{ persona.nome }}</td>
+        <td>{{ persona.cognome }}</td>
+        <td>{{ persona.numeroDiTelefono }}</td>
+        <td>
+          <button (click)="rimuoviPersona(i)">Rimuovi</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
